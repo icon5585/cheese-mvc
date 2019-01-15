@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"/>
+
+<!-- Head Fragment -->
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title th:text="${title}">My Default Cheeses Title</title>
+
+    <!-- Include stylesheet for all pages -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+
+    <!-- Include JS for all pages -->
+    <!-- <script type="text/javascript" th:src="@{/js/script.js"} /> -->
+</head>
+<body>
+
+<!-- Navigation Fragment -->
+<nav th:fragment="navigation">
+    <a href="/cheese">List</a>
+    <a href="/cheese/add">Add</a>
+</nav>
+
+</body>
+</html>

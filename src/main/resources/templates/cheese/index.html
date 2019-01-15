@@ -1,0 +1,16 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+	<h1 th:text="${title}"></h1>
+
+	<nav th:replace="fragments :: navigation"></nav>
+
+	<p th:unless="${cheeses} and ${cheeses.size()}">no cheese :(</p>
+
+	<ul>
+		<li th:each="cheese : ${cheeses}"
+			th:text="${cheese.name + ' : ' + cheese.description + ' : ' + cheese.type.name}"><a
+			th:href="@{'/cheese/edit/' + ${cheese.cheeseId}}">edit</a></li>
+	</ul>
+</body>
+</html>
